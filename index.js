@@ -9,14 +9,14 @@ const server = http.createServer(app)
 const allowedOrigins = ['https://dialogue-box.netlify.app/', 'https://main--dialogue-box.netlify.app/', 'https://main--dialogue-box.netlify.app/app', 'https://dialogue-box.netlify.app/app']
 
 const corsOptions = {
-  origin: allowedOrigins
+  origin: '*' 
 }
 
 app.use(cors(corsOptions))
 
 const io = socketio(server, {
   cors: {
-    origin: allowedOrigins,
+    origin: '*',
     methods: ["GET"]
   }
 })
