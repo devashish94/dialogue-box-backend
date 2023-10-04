@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
   res.send({
     status: 'OK',
     statusCode: 200,
-    message: 'API is running is working'
+    message: 'API is running correctly'
   })
 })
 
