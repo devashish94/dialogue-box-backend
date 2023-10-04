@@ -1,14 +1,23 @@
 const http = require('http')
+const cors = require('cors')
 const express = require('express')
 const socketio = require('socket.io')
 
 const app = express()
 const server = http.createServer(app)
 
+const allowedOrigins = ['https://dialogue-box.netlify.app/', 'https://main--dialogue-box.netlify.app/']
+
+const corsOptions = {
+  origin: allowedOrigins
+}
+
+app.use(cors(corsOptions))
+
 const io = socketio(server, {
   cors: {
-    origin: '*',
-    methods: ["GET", "POST"]
+    origin: allowedOrigins,
+    methods: ["GET"]
   }
 })
 
