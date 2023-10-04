@@ -7,24 +7,28 @@ const socketio = require('socket.io')
 
 const PORT = 3000
 
-app.use(cors({
-  origin: '*'
-}))
+// app.use(cors({
+//   origin: '*'
+// }))
 
 // ------------------------------------------------------------------------- //
-app.use('/', express.static(path.resolve(__dirname, '..', 'app', 'dist')))
+// app.use('/', express.static(path.resolve(__dirname, '..', 'app', 'dist')))
 
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'app', 'dist', 'index.html'))
+  res.send({
+    status: 'OK',
+    statusCode: 200,
+    message: 'API is running is working'
+  })
 })
 
-app.get('/sample/:id', (req, res) => {
-  setTimeout(() => {
-    return res.json({
-      caller: `${req.params.id}`
-    })
-  }, 1500);
-})
+// app.get('/sample/:id', (req, res) => {
+//   setTimeout(() => {
+//     return res.json({
+//       caller: `${req.params.id}`
+//     })
+//   }, 1500);
+// })
 
 // ------------------------------------------------------------------------- //
 
