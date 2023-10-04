@@ -6,7 +6,7 @@ const socketio = require('socket.io')
 const app = express()
 const server = http.createServer(app)
 
-const allowedOrigins = ['https://dialogue-box.netlify.app/', 'https://main--dialogue-box.netlify.app/']
+const allowedOrigins = ['https://dialogue-box.netlify.app/', 'https://main--dialogue-box.netlify.app/', 'https://main--dialogue-box.netlify.app/app']
 
 const corsOptions = {
   origin: allowedOrigins
